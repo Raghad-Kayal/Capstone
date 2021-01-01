@@ -29,7 +29,7 @@ def create_app(test_config=None):
     def index():
         return jsonify({
             "success": True,
-            "Project": "Capstone Project",
+            "Project": "Welcome to Capstone Project!",
         })
 
     # ---------------------------------------------------------------------------------

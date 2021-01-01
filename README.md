@@ -6,7 +6,7 @@ Many hospitals and medical centers still depend on the manual hospital managemen
 
 ### Installing Dependencies
 
-#### Python 3.7
+#### Python 3.9
 
 Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
 
@@ -34,36 +34,8 @@ This will install all of the required packages we selected within the `requireme
 - [jose](https://python-jose.readthedocs.io/en/latest/) JavaScript Object Signing and Encryption for JWTs. Useful for encoding, decoding, and verifying JWTS.
 
 
-## Running the server
-
-From within the `starter` directory first ensure you are working using your created virtual environment.
-
-To run the server, execute:
-
-```bash
-export FLASK_APP=app.py
-export FLASK_ENV=development
-flask run
-```
-
-Setting the `FLASK_ENV` variable to `development` will detect file changes and restart the server automatically.
-
-Setting the `FLASK_APP` variable to `app` directs flask to use the `app.py` file to find the application. 
-
-## Running the API
-API endpoints can be accessed via : 
-
-Auth0 information for endpoints that require authentication can be found in setup.sh.
-
-## Running tests
-To run the unittests, first CD into the starter folder and run the following command:
-
-```bash
-python -m test_app
-```
 
 ## Setup Auth0
-
 
 1. Create a new Auth0 Account
 2. Select a unique tenant domain
@@ -95,6 +67,29 @@ python -m test_app
     - Register 3 users - assign the Receptionist role to one, Nurse role, and Executive Manager role to the other.
     - Sign into each account and make note of the JWT.
     - run each endpoint and correct anr errors.
+
+## Running the server
+
+From within the `starter` directory first ensure you are working using your created virtual environment.
+
+To run the server locally, execute:
+
+```bash
+export FLASK_APP=app.py
+export FLASK_ENV=development
+flask run
+```
+
+Setting the `FLASK_ENV` variable to `development` will detect file changes and restart the server automatically.
+
+Setting the `FLASK_APP` variable to `app` directs flask to use the `app.py` file to find the application. 
+
+
+## Running the API
+
+Base URL: This application can be run locally. The hosted version is at : https://ragadsapp.herokuapp.com/
+
+Authentication: This application requires authentication to perform various actions. All the endpoints require various permissions, except the root endpoint, that are passed via the Bearer token. Auth0 information for endpoints that require authentication can be found in setup.sh.
 
 
 ## API Endpoints Documintation
@@ -271,8 +266,9 @@ python -m test_app
 }
 ```
 
-## Testing
-To run the tests, run
+## Running tests
+To run the unittests, first CD into the starter folder and run the following command:
+
 ```
 python test_app.py
 ```
