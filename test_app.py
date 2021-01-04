@@ -70,6 +70,7 @@ class CapstoneTestCase(unittest.TestCase):
         n_doctor.insert()
         res = self.client().get(
             '/doctors', headers={'Authorization': 'Bearer ' + TOKEN})
+        
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)

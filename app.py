@@ -65,12 +65,13 @@ def create_app(test_config=None):
     # Post a doctor
 
     @app.route('/doctors', methods=['POST'])
-    #@requires_auth('post:doctor')
-    def new_doctor():
+    @requires_auth('post:doctor')
+    def new_doctor(payload):
         try:
             body = request.get_json()
-            new_doctor = Doctor(
-                name=body['name'], deparment=body['deparment'], level=body['level'])
+            new_doctor = Doctor(name=body['name'],
+                                deparment=body['deparment'],
+                                level=body['level'])
 
             new_doctor.insert()
             return jsonify({
@@ -78,7 +79,7 @@ def create_app(test_config=None):
                 'doctor': new_doctor.format()
             })
 
-        except:
+        except Exception:
             abort(422)
 
     # Delete a doctor
@@ -97,7 +98,7 @@ def create_app(test_config=None):
                 'success': True,
                 'Deleted doctor': id})
 
-        except:
+        except Exception:
             abort(422)
 
     # Patch a doctor
@@ -147,8 +148,13 @@ def create_app(test_config=None):
         try:
 
             body = request.get_json()
-            new_patient = Patient(name=body['name'], age=body['age'],
-                                  gender=body['gender'], doctor_id=body['doctor_id'], date_of_appointment=body['date_of_appointment'])
+            new_patient = Patient(name=body['name'],
+                                  age=body['age'],
+                                  gender=body['gender'],
+                                  doctor_id=body['doctor_id'],
+                                  date_of_appointment=body[
+                                      'date_of_appointment']
+                                  )
 
             new_patient.insert()
             return jsonify({
@@ -156,7 +162,7 @@ def create_app(test_config=None):
                 'patient': new_patient.format()
             })
 
-        except:
+        except Exception:
             abort(422)
 
     # Delete a Patient
@@ -176,7 +182,7 @@ def create_app(test_config=None):
                 'success': True,
                 'Deleted patient': id})
 
-        except:
+        except Exception:
             abort(422)
 
     # Patch a patient
