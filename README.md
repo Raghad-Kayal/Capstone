@@ -5,7 +5,7 @@
 Many hospitals and medical centers still depend on the manual hospital management system. Medical management system methods continued to cause many setbacks and problems for medical practitioners, patients, nurses, and other personnel in both government and private hospitals. from this problem, we came up with this app which is a database that arranges doctors, patients, and their appointments.
 
 Motivation!
-- I am in this specific industry (hospital) where such an app will help the people do their job efficiently.
+- This specific industry (hospital) where such an app will help the people do their job efficiently.
 - I developed this project to make use of the knowledge that gaind in full stack nanodegree, and hence gain confidence in these skills.
 - I wanted to contribute something to the open-source community by building this project.
 
