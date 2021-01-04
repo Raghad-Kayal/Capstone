@@ -7,6 +7,19 @@ from flask_cors import CORS
 from models import setup_db, Patient, Doctor
 from auth import AuthError, requires_auth
 
+Doctors_PER_PAGE = 5
+
+
+def paginate_doctor(request, allDoctors):
+    page = request.args.get('page', 1, type=int)
+    start = (page - 1) * Doctors_PER_PAGE
+    end = start + Doctors_PER_PAGE
+
+    doctors = [i.format() for i in allDoctors]
+    current_doctors = doctors[start:end]
+
+    return current_doctors
+
 
 def create_app(test_config=None):
     # create and configure the app
@@ -41,23 +54,19 @@ def create_app(test_config=None):
     @app.route('/doctors', methods=['GET'])
     @requires_auth('get:doctors')
     def show_doctors(payload):
-
-        doctors = Doctor.query.all()
-
-        data = []
-        for doctor in doctors:
-            data.append(doctor.format())
+        allDoctors = Doctor.query.all()
+        theDoctor = paginate_doctor(request, allDoctors)
 
         return jsonify({
             'success': True,
-            'doctors': data
+            'doctors': theDoctor
         })
 
     # Post a doctor
 
     @app.route('/doctors', methods=['POST'])
-    @requires_auth('post:doctor')
-    def new_doctor(payload):
+    #@requires_auth('post:doctor')
+    def new_doctor():
         try:
             body = request.get_json()
             new_doctor = Doctor(

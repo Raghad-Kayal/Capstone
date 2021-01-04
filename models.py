@@ -31,6 +31,26 @@ def setup_db(app, database_path=database_path):
 
 
 '''
+Extend the base Model class to add common methods
+'''
+
+
+class IDU(db.Model):
+    __abstract__ = True
+
+    def insert(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+
+'''
 Doctor
 
 '''
@@ -38,7 +58,7 @@ Doctor
 # HOSPITAL MANAGEMENT SYSTEM DATABASE PROJECT
 
 
-class Doctor(db.Model):
+class Doctor(IDU):
     __tablename__ = 'doctor'
 
     id = Column(Integer, primary_key=True)
@@ -50,17 +70,6 @@ class Doctor(db.Model):
         self.name = name
         self.deparment = deparment
         self.level = level
-
-    def insert(self):
-        db.session.add(self)
-        db.session.commit()
-
-    def update(self):
-        db.session.commit()
-
-    def delete(self):
-        db.session.delete(self)
-        db.session.commit()
 
     def format(self):
         return {
@@ -77,7 +86,7 @@ Patient
 '''
 
 
-class Patient(db.Model):
+class Patient(IDU):
     __tablename__ = 'patient'
 
     id = Column(Integer, primary_key=True)
@@ -94,17 +103,6 @@ class Patient(db.Model):
         self.gender = gender
         self.doctor_id = doctor_id
         self.date_of_appointment = date_of_appointment
-
-    def insert(self):
-        db.session.add(self)
-        db.session.commit()
-
-    def update(self):
-        db.session.commit()
-
-    def delete(self):
-        db.session.delete(self)
-        db.session.commit()
 
     def format(self):
         return {

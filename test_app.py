@@ -68,7 +68,6 @@ class CapstoneTestCase(unittest.TestCase):
         n_doctor = Doctor(
             name='Leonardo Di Caprio', deparment='Pediatric Surgery', level='Consltant')
         n_doctor.insert()
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().get(
             '/doctors', headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -82,7 +81,6 @@ class CapstoneTestCase(unittest.TestCase):
         n_doctor = Doctor(
             name='Leonardo Di Caprio', deparment='Pediatric Surgery', level='Consltant')
         n_doctor.insert()
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().get(
             '/doctors/1', headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -100,7 +98,6 @@ class CapstoneTestCase(unittest.TestCase):
         n_patient = Patient(name='leen', age=18,
                             gender='female', doctor_id=3, date_of_appointment='2021-01-13')
         n_patient.insert()
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().get(
             '/patient', headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -114,7 +111,6 @@ class CapstoneTestCase(unittest.TestCase):
         n_patient = Patient(name='leen', age=18,
                             gender='female', doctor_id=3, date_of_appointment='2021-01-13')
         n_patient.insert()
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().get(
             '/patient/1', headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -128,7 +124,6 @@ class CapstoneTestCase(unittest.TestCase):
     # ----------------------------------------------
 
     def test_post_new_doctor(self):
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().post('/doctors', json=self.new_doctor,
                                  headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -139,7 +134,6 @@ class CapstoneTestCase(unittest.TestCase):
         self.assertTrue(data['doctor']['level'])
 
     def test_fail_post_new_doctor(self):
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().post('/doctors/1/doctor', json=self.new_doctor,
                                  headers={'Content-Type': 'application/json'})
         data = json.loads(res.data)
@@ -152,7 +146,6 @@ class CapstoneTestCase(unittest.TestCase):
     # POST NEW patient test for success and fail
     # ----------------------------------------------
     def test_post_new_patient(self):
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().post('/patient', json=self.new_patient,
                                  headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -165,7 +158,6 @@ class CapstoneTestCase(unittest.TestCase):
         self.assertTrue(data['patient']['date_of_appointment'])
 
     def test_fail_post_new_patient(self):
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().post('/patient/1/doctor', json=self.new_patient,
                                  headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -184,7 +176,6 @@ class CapstoneTestCase(unittest.TestCase):
             name='Leonardo Di Caprio', deparment='Pediatric Surgery', level='Consltant')
         n_doctor.insert()
 
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().delete(
             '/doctors/%s' % (n_doctor.id), headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -198,7 +189,6 @@ class CapstoneTestCase(unittest.TestCase):
         self.assertEqual(doctors, None)
 
     def test_fail_delete_doctor(self):
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().delete(
             '/doctors/111', headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -217,7 +207,6 @@ class CapstoneTestCase(unittest.TestCase):
                             gender='female', doctor_id=3, date_of_appointment='2021-01-13')
         p_patient.insert()
 
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().delete(
             '/patient/%s' % (p_patient.id), headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -232,7 +221,6 @@ class CapstoneTestCase(unittest.TestCase):
         self.assertEqual(patient, None)
 
     def test_fail_delete_patient(self):
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().delete(
             '/patient/111', headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -251,7 +239,6 @@ class CapstoneTestCase(unittest.TestCase):
             name='Leonardo Di Caprio', deparment='Pediatric Surgery', level='Consltant')
         p_doctor.insert()
 
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().patch('/doctors/%s' % (p_doctor.id), json=self.update_doctor,
                                   headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -262,7 +249,6 @@ class CapstoneTestCase(unittest.TestCase):
         self.assertTrue(data['updated doctor']['level'])
 
     def test_fail_patch_doctor(self):
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().patch('/doctors', json=self.update_doctor,
                                   headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -279,7 +265,6 @@ class CapstoneTestCase(unittest.TestCase):
         n_patient = Patient(name='leen', age=18,
                             gender='female', doctor_id=3, date_of_appointment='2021-01-13')
         n_patient.insert()
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().patch('/patient/%s' % (n_patient.id), json=self.update_patient,
                                   headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
@@ -292,7 +277,6 @@ class CapstoneTestCase(unittest.TestCase):
         self.assertTrue(data['updated patient']['date_of_appointment'])
 
     def test_fail_patch_patient(self):
-        TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9yWW1ObWRnNkhBQk9fdkJ0MjRwNyJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZXNob3AudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZTI0MGE1NTY5NmFlMDA3MTJlMmRmNCIsImF1ZCI6ImFwcCIsImlhdCI6MTYwOTE0NTA3MSwiZXhwIjoxNjA5MTUyMjcxLCJhenAiOiJNbVg2ejNrVnRSYlF4YkEyUFZVNjhXZ2VHdlNRTUxXWCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRvY3RvciIsImRlbGV0ZTpwYXRpZW50IiwiZ2V0OmRvY3RvcnMiLCJnZXQ6cGF0aWVudCIsInBhdGNoOmRvY3RvciIsInBhdGNoOnBhdGllbnQiLCJwb3N0OmRvY3RvciIsInBvc3Q6cGF0aWVudCJdfQ.Bl605ZEhYwATLHZX27PnMDcuc--si0HEnE1kugGpDpEnN259XugTW6gk2uXUWrpI1dyMTz-tQ8-ppFwyo4wjZueNWvMYQ0BnwPviEjYtaXvd6OMiZAD0uqEJ77F8JIE84e8jcULnS2MLR8XgNkW4UD_ebqSgCHRfMHfBkkjrlEjEBD440RFsl8M1K2V3u-DGc702uMTnntobiUGtxnkqx1-JUDcLHY1gb1omz5BWTYV1TW6hUH6ZvoY7499uVQvVYSnGBNMQAFCcWJUw-Akz-zBCLqCnk8yEgBQMSdmXvbsVLrhVU7IV14INsEnDvGtbL5UOjqr_tYeRzYjon-Jckw'
         res = self.client().patch('/patient', json=self.update_patient,
                                   headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)

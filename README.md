@@ -4,6 +4,12 @@
 
 Many hospitals and medical centers still depend on the manual hospital management system. Medical management system methods continued to cause many setbacks and problems for medical practitioners, patients, nurses, and other personnel in both government and private hospitals. from this problem, we came up with this app which is a database that arranges doctors, patients, and their appointments.
 
+Motivation!
+- I am in this specific industry (hospital) where such an app will help the people do their job efficiently.
+- I developed this project to make use of the knowledge that gaind in full stack nanodegree, and hence gain confidence in these skills.
+- I wanted to contribute something to the open-source community by building this project.
+
+
 ### Installing Dependencies
 
 #### Python 3.9
@@ -19,7 +25,7 @@ We recommend working within a virtual environment whenever using Python for proj
 Once you have your virtual environment setup and running, install dependencies by naviging to the `/starter` directory and running:
 
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 This will install all of the required packages we selected within the `requirements.txt` file.
@@ -33,7 +39,16 @@ This will install all of the required packages we selected within the `requireme
 
 - [jose](https://python-jose.readthedocs.io/en/latest/) JavaScript Object Signing and Encryption for JWTs. Useful for encoding, decoding, and verifying JWTS.
 
+## Data Modeling
 
+`models.py`
+The schema for the database and helper methods to simplify API behavior are in models.py: 
+- There are two tables created: Doctor and patient.
+- Doctor table can be used by all roles but in defferent ways. As for  'Receptionist' can get doctor's information, 'Nurse' can get doctor's info as well as update his information, and finally 'Executive Manager' can get, update and delete a doctor. 
+- The Patient table has a foreign key on the Doctor table for doctor_id.
+- Patient table can be used by all roles but in defferent ways. As for  'Receptionist' can get patient's information, 'Nurse' can get, update and delete a patient, and finally 'Executive Manager' has all permissions of this table.
+
+Each table has an insert, update, delete, and format helper functions.
 
 ## Setup Auth0
 
@@ -73,10 +88,19 @@ This will install all of the required packages we selected within the `requireme
 From within the `starter` directory first ensure you are working using your created virtual environment.
 
 To run the server locally, execute:
+On Linux:export 
 
 ```bash
 export FLASK_APP=app.py
 export FLASK_ENV=development
+flask run
+```
+
+On Windows:set 
+
+```bash
+set FLASK_APP=app.py
+set FLASK_ENV=development
 flask run
 ```
 

@@ -5,11 +5,10 @@ from jose import jwt
 from urllib.request import urlopen
 import sys
 
-#CHANGE HERE
-AUTH0_DOMAIN = 'fsndcoffeshop.us.auth0.com'
-ALGORITHMS = ['RS256']
-API_AUDIENCE = 'app'
-
+# CHANGE HERE
+AUTH0_DOMAIN = os.environ.get('fsndcoffeshop.us.auth0.com')
+ALGORITHMS = os.environ.get['RS256']
+API_AUDIENCE = os.environ.get('app')
 # AuthError Exception
 '''
 AuthError Exception
