@@ -65,8 +65,8 @@ class CapstoneTestCase(unittest.TestCase):
 
     def test_get_doctor(self):
         # Insert dummy doctor into database.
-        n_doctor = Doctor(
-            name='Leonardo Di Caprio', deparment='Pediatric Surgery', level='Consltant')
+        n_doctor = Doctor(name='Leonardo Di Caprio',
+                          deparment='Pediatric Surgery', level='Consltant')
         n_doctor.insert()
         res = self.client().get(
             '/doctors', headers={'Authorization': 'Bearer ' + TOKEN})
@@ -78,8 +78,8 @@ class CapstoneTestCase(unittest.TestCase):
 
     def test_fail_get_doctor(self):
         # Insert dummy doctor into database.
-        n_doctor = Doctor(
-            name='Leonardo Di Caprio', deparment='Pediatric Surgery', level='Consltant')
+        n_doctor = Doctor(name='Leonardo Di Caprio',
+                          deparment='Pediatric Surgery', level='Consltant')
         n_doctor.insert()
         res = self.client().get(
             '/doctors/1', headers={'Authorization': 'Bearer ' + TOKEN})
@@ -95,8 +95,8 @@ class CapstoneTestCase(unittest.TestCase):
 
     def test_get_patient(self):
         # Insert dummy patient into database.
-        n_patient = Patient(name='leen', age=18,
-                            gender='female', doctor_id=3, date_of_appointment='2021-01-13')
+        n_patient = Patient(name='leen', age=18, gender='female',
+                            doctor_id=3, date_of_appointment='2021-01-13')
         n_patient.insert()
         res = self.client().get(
             '/patient', headers={'Authorization': 'Bearer ' + TOKEN})
@@ -108,8 +108,8 @@ class CapstoneTestCase(unittest.TestCase):
 
     def test_fail_get_patient(self):
         # Insert dummy patient into database.
-        n_patient = Patient(name='leen', age=18,
-                            gender='female', doctor_id=3, date_of_appointment='2021-01-13')
+        n_patient = Patient(name='leen', age=18, gender='female',
+                            doctor_id=3, date_of_appointment='2021-01-13')
         n_patient.insert()
         res = self.client().get(
             '/patient/1', headers={'Authorization': 'Bearer ' + TOKEN})
@@ -172,12 +172,13 @@ class CapstoneTestCase(unittest.TestCase):
     def test_delete_doctor(self):
 
         # Insert a dummy doctor to database.
-        n_doctor = Doctor(
-            name='Leonardo Di Caprio', deparment='Pediatric Surgery', level='Consltant')
+        n_doctor = Doctor(name='Leonardo Di Caprio',
+                          deparment='Pediatric Surgery', level='Consltant')
         n_doctor.insert()
 
-        res = self.client().delete(
-            '/doctors/%s' % (n_doctor.id), headers={'Authorization': 'Bearer ' + TOKEN})
+        res = self.client().delete('/doctors/%s' % (n_doctor.id),
+                                   headers={'Authorization': 'Bearer ' + TOKEN}
+                                   )
         data = json.loads(res.data)
 
         doctors = Doctor.query.filter(Doctor.id == n_doctor.id).one_or_none()
@@ -203,12 +204,13 @@ class CapstoneTestCase(unittest.TestCase):
 
     def test_delete_patient(self):
 
-        p_patient = Patient(name='leen', age=18,
-                            gender='female', doctor_id=3, date_of_appointment='2021-01-13')
+        p_patient = Patient(name='leen', age=18, gender='female',
+                            doctor_id=3, date_of_appointment='2021-01-13')
         p_patient.insert()
 
-        res = self.client().delete(
-            '/patient/%s' % (p_patient.id), headers={'Authorization': 'Bearer ' + TOKEN})
+        res = self.client().delete('/patient/%s' % (p_patient.id),
+                                   headers={'Authorization': 'Bearer ' + TOKEN}
+                                   )
         data = json.loads(res.data)
 
         patient = Patient.query.filter(
@@ -235,11 +237,12 @@ class CapstoneTestCase(unittest.TestCase):
 
     def test_patch_doctor(self):
 
-        p_doctor = Doctor(
-            name='Leonardo Di Caprio', deparment='Pediatric Surgery', level='Consltant')
+        p_doctor = Doctor(name='Leonardo Di Caprio',
+                          deparment='Pediatric Surgery', level='Consltant')
         p_doctor.insert()
 
-        res = self.client().patch('/doctors/%s' % (p_doctor.id), json=self.update_doctor,
+        res = self.client().patch('/doctors/%s' % (p_doctor.id),
+                                  json=self.update_doctor,
                                   headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
 
@@ -262,10 +265,11 @@ class CapstoneTestCase(unittest.TestCase):
     # ----------------------------------------------
 
     def test_patch_patient(self):
-        n_patient = Patient(name='leen', age=18,
-                            gender='female', doctor_id=3, date_of_appointment='2021-01-13')
+        n_patient = Patient(name='leen', age=18, gender='female',
+                            doctor_id=3, date_of_appointment='2021-01-13')
         n_patient.insert()
-        res = self.client().patch('/patient/%s' % (n_patient.id), json=self.update_patient,
+        res = self.client().patch('/patient/%s' % (n_patient.id),
+                                  json=self.update_patient,
                                   headers={'Authorization': 'Bearer ' + TOKEN})
         data = json.loads(res.data)
 
